@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/color_background"
+    android:clickable="false"
     tools:context=".controller.fragments.TranslateFragment">
 
 
@@ -16,14 +17,15 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="8dp"
-        android:background="@color/color_background"
         app:layout_constraintBottom_toTopOf="@+id/imageView_translate"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edit_text_in_put"
+            android:inputType="textMultiLine"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:hint="@string/enter_the_word_here"
@@ -35,12 +37,12 @@
         android:id="@+id/imageView_translate"
         android:layout_width="80dp"
         android:layout_height="80dp"
+        android:contentDescription="@string/translator"
         android:src="@drawable/ic_action_translate"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="@string/translator" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/text_box_out_put"
@@ -53,12 +55,17 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView_translate">
+        app:layout_constraintTop_toBottomOf="@+id/imageView_translate"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
-        <com.google.android.material.textview.MaterialTextView
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/text_out_put"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="false"
+            android:inputType="textMultiLine"
+            android:enabled="false"
             android:textSize="24sp" />
 
 

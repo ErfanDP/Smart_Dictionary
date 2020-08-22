@@ -15,6 +15,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.example.smartdictionary.R;
+import com.example.smartdictionary.model.Languages;
 
 import java.util.Objects;
 
@@ -25,6 +26,9 @@ public class TranslateFragment extends Fragment {
     private ImageView mImageViewTranslate;
     private Spinner mSpinnerInput;
     private Spinner mSpinnerOutput;
+    private Languages mLanguagesInput;
+    private Languages mLanguagesOutput;
+
 
 
     public static TranslateFragment newInstance() {
@@ -39,14 +43,32 @@ public class TranslateFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_translate, container, false);
         findViews(view);
         SpinnersAdapterInit();
+        spinnersListeners();
+
+        return view;
+    }
+
+    private void spinnersListeners() {
         mSpinnerInput.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
+                switch (position){
+                    case 0:
+                        mLanguagesInput = Languages.PERSIAN;
+                        break;
+                    case 1:
+                        mLanguagesInput = Languages.ARABIC;
+                        break;
+                    case 2:
+                        mLanguagesInput = Languages.FRENCH;
+                        break;
+                    case 3:
+                        mLanguagesInput = Languages.ENGLISH;
+                        break;
+                }
             }
 
             @Override
@@ -54,7 +76,30 @@ public class TranslateFragment extends Fragment {
 
             }
         });
-        return view;
+        mSpinnerOutput.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                switch (position){
+                    case 0:
+                        mLanguagesOutput = Languages.PERSIAN;
+                        break;
+                    case 1:
+                        mLanguagesOutput = Languages.ARABIC;
+                        break;
+                    case 2:
+                        mLanguagesOutput = Languages.FRENCH;
+                        break;
+                    case 3:
+                        mLanguagesOutput = Languages.ENGLISH;
+                        break;
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
     }
 
     private void SpinnersAdapterInit() {
