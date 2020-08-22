@@ -1,9 +1,11 @@
 package com.example.smartdictionary.repository;
 
+import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.example.smartdictionary.controller.database.WordCursorWrapper;
+import com.example.smartdictionary.controller.database.WordDBBaseHelper;
 import com.example.smartdictionary.model.ExceptionWordNotFound;
 import com.example.smartdictionary.model.Languages;
 import com.example.smartdictionary.model.Word;
@@ -12,11 +14,16 @@ import static com.example.smartdictionary.controller.database.WordDBSchema.WordT
 
 public class WordRepository {
     private static WordRepository sWordRepository;
+    private static Context mContext;
     private SQLiteDatabase mDataBase;
 
-    private WordRepository(){}
+    private WordRepository(){
+        WordDBBaseHelper database = new WordDBBaseHelper(mContext);
+        mDataBase =database.getWritableDatabase();
+    }
 
-    public WordRepository getInstance(){
+    public static WordRepository getInstance(Context context){
+        mContext = context.getApplicationContext();
         if(sWordRepository == null){
             sWordRepository = new WordRepository();
         }

@@ -30,35 +30,16 @@ public class Word {
     }
 
 
-    public String getArabic() {
-        return mArabic;
-    }
-
-    public void setArabic(String arabic) {
-        mArabic = arabic;
-    }
-
-    public String getPersian() {
-        return mPersian;
-    }
-
-    public void setPersian(String persian) {
-        mPersian = persian;
-    }
-
-    public String getEnglish() {
-        return mEnglish;
-    }
-
-    public void setEnglish(String english) {
-        mEnglish = english;
-    }
-
-    public String getFrench() {
-        return mFrench;
-    }
-
-    public void setFrench(String french) {
-        mFrench = french;
+    public String getStringByLanguage(Languages languages) {
+        switch (languages){
+            case PERSIAN:
+                return mPersian;
+            case ENGLISH:
+                return mEnglish;
+            case FRENCH:
+                return mFrench;
+            default:
+                return mArabic;
+        }
     }
 }

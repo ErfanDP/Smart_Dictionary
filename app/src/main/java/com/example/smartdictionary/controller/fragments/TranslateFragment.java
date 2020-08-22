@@ -15,7 +15,10 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.example.smartdictionary.R;
+import com.example.smartdictionary.model.ExceptionWordNotFound;
 import com.example.smartdictionary.model.Languages;
+import com.example.smartdictionary.model.Word;
+import com.example.smartdictionary.repository.WordRepository;
 
 import java.util.Objects;
 
@@ -28,6 +31,7 @@ public class TranslateFragment extends Fragment {
     private Spinner mSpinnerOutput;
     private Languages mLanguagesInput;
     private Languages mLanguagesOutput;
+    private WordRepository mRepository;
 
 
 
@@ -38,6 +42,7 @@ public class TranslateFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mRepository = WordRepository.getInstance(Objects.requireNonNull(getContext()));
     }
 
     @Override
@@ -47,7 +52,17 @@ public class TranslateFragment extends Fragment {
         findViews(view);
         SpinnersAdapterInit();
         spinnersListeners();
-
+        mImageViewTranslate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    Word word =  mRepository.getWord(mLanguagesInput,mInputText.getText().toString());
+                    mOutputText.setText(word.getStringByLanguage(mLanguagesOutput));
+                } catch (ExceptionWordNotFound exceptionWordNotFound) {
+                    mOutputText.setText(exceptionWordNotFound.getMessage());
+                }
+            }
+        });
         return view;
     }
 
