@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_background"
+    tools:context=".controller.fragments.TranslateFragment">
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/text_box_in_put"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/color_background"
+        app:layout_constraintBottom_toTopOf="@+id/imageView_translate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_text_in_put"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="@string/enter_the_word_here"
+            android:textSize="24sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <ImageView
+        android:id="@+id/imageView_translate"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/ic_action_translate"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/translator" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/text_box_out_put"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView_translate">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/text_out_put"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="24sp" />
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Spinner
+        android:id="@+id/spinner_input"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView_translate"
+        app:layout_constraintEnd_toStartOf="@+id/imageView_translate"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_from_string" />
+
+    <TextView
+        android:id="@+id/text_from_string"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/from"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/spinner_input"
+        app:layout_constraintStart_toStartOf="@+id/spinner_input"
+        app:layout_constraintTop_toTopOf="@+id/imageView_translate" />
+
+    <TextView
+        android:id="@+id/text_to_string"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/to"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/spinner_out_put"
+        app:layout_constraintStart_toStartOf="@+id/spinner_out_put"
+        app:layout_constraintTop_toTopOf="@+id/imageView_translate" />
+
+
+    <Spinner
+        android:id="@+id/spinner_out_put"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView_translate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView_translate"
+        app:layout_constraintTop_toBottomOf="@+id/text_to_string" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
