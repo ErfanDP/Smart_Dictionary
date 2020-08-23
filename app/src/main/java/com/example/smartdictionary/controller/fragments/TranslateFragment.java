@@ -2,9 +2,13 @@ package com.example.smartdictionary.controller.fragments;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -24,6 +28,7 @@ import java.util.Objects;
 
 public class TranslateFragment extends Fragment {
 
+    public static final String TAG_NEW_WORD_DIALOG = "tag_new word_dialog";
     private EditText mInputText;
     private TextView mOutputText;
     private ImageView mImageViewTranslate;
@@ -42,6 +47,7 @@ public class TranslateFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
         mRepository = WordRepository.getInstance(Objects.requireNonNull(getContext()));
     }
 
@@ -52,6 +58,30 @@ public class TranslateFragment extends Fragment {
         findViews(view);
         SpinnersAdapterInit();
         spinnersListeners();
+        listeners();
+        return view;
+    }
+
+
+    @Override
+    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+        inflater.inflate(R.menu.menu_translate,menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.menu_item_add_word:
+                DialogNewWord dialog = DialogNewWord.newInstance();
+                dialog.show(Objects.requireNonNull(getFragmentManager()), TAG_NEW_WORD_DIALOG);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    private void listeners() {
         mImageViewTranslate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -63,7 +93,6 @@ public class TranslateFragment extends Fragment {
                 }
             }
         });
-        return view;
     }
 
     private void spinnersListeners() {

@@ -6,6 +6,13 @@
     <string name="from">From</string>
     <string name="to">To</string>
     <string name="translator">translator</string>
+    <string name="add_word">Add Word</string>
+    <string name="arabic">Arabic</string>
+    <string name="persian">Persian</string>
+    <string name="french">French</string>
+    <string name="english">English</string>
+    <string name="title_new_word">New Word</string>
+    <string name="add">Add</string>
     <string-array name="languages_array">
         <item>Persian</item>
         <item>Arabic</item>
