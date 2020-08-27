@@ -1,8 +1,9 @@
 package com.example.smartdictionary.model;
 
+import java.io.Serializable;
 import java.util.UUID;
 
-public class Word {
+public class Word implements Serializable {
     private UUID mUUID;
     private String mArabic;
     private String mPersian;
@@ -41,5 +42,21 @@ public class Word {
             default:
                 return mArabic;
         }
+    }
+
+    public void setArabic(String arabic) {
+        mArabic = arabic;
+    }
+
+    public void setPersian(String persian) {
+        mPersian = persian;
+    }
+
+    public void setEnglish(String english) {
+        mEnglish = english;
+    }
+
+    public void setFrench(String french) {
+        mFrench = french;
     }
 }

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">لغتنامه هوشمند</string>
+    <string name="enter_the_word_here">کلمه مورد نظر را وارد کنید</string>
+    <string name="from">از</string>
+    <string name="to">به</string>
+    <string name="translator">ترجمه گر</string>
+    <string name="add_word">اضافه کردن حرف</string>
+    <string name="arabic">عربی</string>
+    <string name="persian">فارسی</string>
+    <string name="french">فرانسوی</string>
+    <string name="english">انگلیسی</string>
+    <string name="title_new_word">کلمه ی جدید</string>
+    <string name="save">ذخیره</string>
+    <string name="share">اشتراک گذاری</string>
+    <string name="edit_word">اصلاح کلمه</string>
+    <string name="action_bar_subtitle">تعداد کلمات: %d</string>
+    <string name="title_of_share">این کلمه رو نگاه کن!!</string>
+    <string name="word_share_massage">معنی کلمه ای رو که پیدا کردم:\n
+        فارسی: %1$s\n
+        عربی: %2$s\n
+        انگلیسی :%3$s\n
+        فرانسوی: %4$s
+    </string>
+    <string name="words_data">کتابخانه کلمات</string>
+    <string name="change_language">تغییر زبان برنامه</string>
+    <string-array name="languages_array">
+        <item>فارسی</item>
+        <item>عربی</item>
+        <item>فرانسوی</item>
+        <item>انگلیسی</item>
+    </string-array>
+</resources>

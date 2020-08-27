@@ -2,8 +2,10 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="8dp">
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp"
+    android:background="@color/colorPrimary"
+    android:paddingBottom="16dp">
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/text_layout_persian"
@@ -11,15 +13,17 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/text_layout_arabic"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edit_text_persian"
+            android:id="@+id/list_edit_text_persian"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:enabled="false"
             android:hint="@string/persian" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -27,17 +31,19 @@
         android:id="@+id/text_layout_arabic"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_layout_persian">
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/text_layout_persian"
+        app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edit_text_arabic"
+            android:id="@+id/list_edit_text_arabic"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:enabled="false"
             android:hint="@string/arabic" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -45,17 +51,16 @@
         android:id="@+id/text_layout_french"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_layout_arabic">
+        app:layout_constraintEnd_toEndOf="@+id/text_layout_persian"
+        app:layout_constraintStart_toStartOf="@+id/text_layout_persian"
+        app:layout_constraintTop_toBottomOf="@+id/text_layout_persian">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edit_text_french"
+            android:id="@+id/list_edit_text_french"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:enabled="false"
             android:hint="@string/french" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -63,29 +68,16 @@
         android:id="@+id/text_layout_english"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_layout_french">
+        app:layout_constraintEnd_toEndOf="@+id/text_layout_arabic"
+        app:layout_constraintStart_toStartOf="@+id/text_layout_arabic"
+        app:layout_constraintTop_toBottomOf="@+id/text_layout_arabic">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edit_text_english"
+            android:id="@+id/list_edit_text_english"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:enabled="false"
             android:hint="@string/english" />
-
     </com.google.android.material.textfield.TextInputLayout>
-
-    <Button
-        android:id="@+id/button_share"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="@string/share"
-        android:visibility="invisible"
-        app:layout_constraintStart_toStartOf="@+id/text_layout_english"
-        app:layout_constraintTop_toBottomOf="@+id/text_layout_english" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

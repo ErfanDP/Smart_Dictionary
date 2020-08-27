@@ -3,8 +3,13 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/menu_item_add_word"
-        android:icon="@android:drawable/ic_menu_add"
-        android:title="@string/add_word"
+        android:id="@+id/menu_item_admin"
+        android:icon="@drawable/ic_action_admin"
+        android:title="@string/words_data"
+        app:showAsAction="ifRoom|withText" />
+    <item
+        android:id="@+id/manu_item_change_language"
+        android:icon="@drawable/ic_action_change_language"
+        android:title="@string/change_language"
         app:showAsAction="ifRoom|withText" />
 </menu>

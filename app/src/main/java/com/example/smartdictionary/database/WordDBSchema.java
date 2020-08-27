@@ -1,4 +1,4 @@
-package com.example.smartdictionary.controller.database;
+package com.example.smartdictionary.database;
 
 public class WordDBSchema {
     public static final String NAME = "words.db";

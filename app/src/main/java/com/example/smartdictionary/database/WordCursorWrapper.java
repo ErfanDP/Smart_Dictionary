@@ -1,4 +1,4 @@
-package com.example.smartdictionary.controller.database;
+package com.example.smartdictionary.database;
 
 import android.database.Cursor;
 import android.database.CursorWrapper;
@@ -7,7 +7,7 @@ import com.example.smartdictionary.model.Word;
 
 import java.util.UUID;
 
-import static com.example.smartdictionary.controller.database.WordDBSchema.*;
+import static com.example.smartdictionary.database.WordDBSchema.*;
 
 public class WordCursorWrapper extends CursorWrapper {
     /**

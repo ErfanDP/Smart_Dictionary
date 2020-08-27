@@ -1,4 +1,6 @@
 package com.example.smartdictionary.model;
 
-public enum Languages {ARABIC,PERSIAN,FRENCH,ENGLISH
+import java.io.Serializable;
+
+public enum Languages implements Serializable {ARABIC,PERSIAN,FRENCH,ENGLISH
 }

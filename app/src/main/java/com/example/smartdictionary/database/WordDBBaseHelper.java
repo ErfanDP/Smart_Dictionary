@@ -1,4 +1,4 @@
-package com.example.smartdictionary.controller.database;
+package com.example.smartdictionary.database;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
-import static com.example.smartdictionary.controller.database.WordDBSchema.*;
+import static com.example.smartdictionary.database.WordDBSchema.*;
 
 public class WordDBBaseHelper extends SQLiteOpenHelper{
 
